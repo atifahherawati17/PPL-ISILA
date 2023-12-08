@@ -1,0 +1,441 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* HEADER */
+.top-header {
+    background: linear-gradient(to bottom, #0f1a1e, #192f28);
+    /* background: #0f1a1e; */
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px 50px;
+    position:sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index:9999;
+}
+
+.logo1{
+    margin-left: 20px;
+    width: 6.5cm;
+}
+
+.logocontact{
+    width: 2.3cm;
+    height: 3.5cm;
+    border-radius: 20px;
+}
+
+.logocontact1{
+    width: 2cm;
+    height: 2cm;
+    border-radius: 20px;
+}
+.row1 h1{
+    font-size: 18px;
+}
+.row1 p{
+    font-size: 15px;
+}
+
+.row2 h1{
+    font-size: 18px;
+}
+.row2 p{
+    font-size: 15px;
+}
+.row3 h1{
+    font-size: 18px;
+}
+.row3 p{
+    font-size: 15px;
+}
+.menu{
+    margin-left: auto;
+    align-items: center;
+}
+.menu-item{
+    margin-right: 20px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+.menu-item:hover {
+    color: #526863;
+    text-decoration: underline;
+}
+
+.menu-item1{
+    margin-right: 20px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
+    border-right: 2px solid #fff;
+    padding-right: 25px;
+}
+.menu-item1:hover {
+    color: #5268639f;
+    text-decoration: underline;
+}
+
+.menu1{
+    background-color: #526863;
+    border-radius: 20px 20px 20px 20px;
+    margin-right: 15px;
+}
+.menu1:hover{
+    background-color: #5268639f;
+    border-radius: 20px 20px 20px 20px;
+}
+.menu-item2{
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: #fff;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.background-container {
+    position: relative;
+    height: auto;
+    overflow: hidden; /* Untuk memungkinkan scroll jika konten melebihi viewport */
+    background-image: url('../img/konten.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.background-container-login{
+    position: relative;
+    height: auto; /* 100% dari tinggi viewport */
+    overflow: hidden; /* Untuk memungkinkan scroll jika konten melebihi viewport */
+    background-image: url('../img/konten.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.content-container {
+    background-color: #526863ee;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    z-index: 1;
+    width: 75%;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.content-container1 {
+    margin-top: 5%;
+}
+
+.content-container2 {
+    margin-top: 5%;
+}
+
+.content-container3 {
+    margin-top: 5%;
+}
+
+.content-container4 {
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+
+.content-container-login {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    z-index: 1;
+    margin: 0 auto;
+}
+.content-container-login {
+    margin-top: 20%;
+    margin-bottom: 20%;
+}
+
+.row{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 10px;
+}
+.row2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 5px;
+}
+.row3{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(to bottom, #192f28, #0f1a1e);
+    color: #fff; /* Warna teks untuk footer */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.icon {
+    margin-right: 15px;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.icon:last-child {
+    margin-right: 0; /* Menghilangkan margin kanan pada ikon terakhir */
+}
+
+.icon:hover {
+    color: #526863;
+}
+
+html {
+    height: 100%;
+  }
+  body {
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    background: linear-gradient(#8f79a19e, #fff);
+  }
+
+  .login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: #526863c0;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.289);
+    border-radius: 10px;
+  }
+  
+  .login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    padding-bottom: 1cm;
+    padding-top: 1cm;
+  }
+  
+  .login-box .user-box {
+    position: relative;
+  }
+  
+  .login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+  .login-box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: 3.5s;
+  }
+  
+  .login-box .user-box input:focus ~ label,
+  .login-box .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #fff;
+    font-size: 12px;
+  }
+
+.col{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px; /* Jarak antar elemen */
+    justify-content: center; /* Mepet di tengah horizontal */
+    align-items: center; /* Mepet di tengah vertical */
+}
+
+  .ab{
+    position: relative;
+    display: inline-block;
+    padding-left: 3cm;
+    padding-right: 3cm;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: #ffffff;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+    background-color: #203732dd;
+    border-radius: 5px;
+  }
+  
+  .ab:hover {
+    background: #526863;
+    color: #fff;
+    border-radius: 5px;
+  }
+  
+  .span {
+    position: absolute;
+    display: block;
+  }
+  
+  .span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #b593d0fe);
+    animation: btn-anim1 1s linear infinite;
+  }
+  
+  @keyframes btn-anim1 {
+    0% {
+      left: -100%;
+    }
+    50%,100% {
+      left: 100%;
+    }
+  }
+  
+  .span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #b593d0fe);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+  }
+  
+  @keyframes btn-anim2 {
+    0% {
+      top: -100%;
+    }
+    50%,100% {
+      top: 100%;
+    }
+  }
+  
+  .cancel{
+    text-align: center;
+    color: #fff;
+    padding-top: 20px;
+  }
+  .home{
+    color: #fff;
+    text-decoration: none;
+  }
+  .home:hover{
+    color: #ffffff7c;
+  }
+
+  .abl {
+    position: relative;
+    display: inline-block;
+    padding-left: 3cm;
+    padding-right: 3cm;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: #ffffff;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    letter-spacing: 4px;
+    background-color: #203732dd;
+    border-radius: 5px;
+}
+
+  .abl:hover {
+    background: #91b9af;
+    color: #fff;
+    border-radius: 5px;
+  }
+
+  .abl.active {
+    background-color: #526863; /* Ganti warna latar belakang sesuai keinginan Anda */
+}
+
+.left p{
+  text-align: justify;
+  font-size: 17px;
+  color: #c5e8df;
+}
+
+.konten{
+  width: 100%;
+  font-family: 'Courier New';
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.content {
+	display: block;
+	width: 100%;
+	object-fit: cover;
+}
+
+@media all and (min-width:560px) {
+	.container {
+		display: grid;
+		grid-auto-flow: dense;
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	}
+	
+	.box17a {
+		grid-column: span 2;
+		grid-row: span 2;
+	}
+	
+	.box27 {
+		grid-column: span 2;
+		grid-row: span 2;
+	}
+	
+	.box5 {
+		grid-column: span 3;
+		grid-row: span 3;
+	}
+}
