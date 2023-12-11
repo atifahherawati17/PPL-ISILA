@@ -14,5 +14,9 @@ def loginadm():
 def loginpmh():
     return render_template('loginpemohon.html')
 
+@app.route('/registrasipmh')
+def registrasipmh():
+    return render_template('registrasipemohon.html')
+
 if __name__ == '__main__':
     app.run (debug = True)

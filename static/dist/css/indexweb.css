@@ -116,7 +116,7 @@
 }
 .background-container-login{
     position: relative;
-    height: auto; /* 100% dari tinggi viewport */
+    height: 850px; /* 100% dari tinggi viewport */
     overflow: hidden; /* Untuk memungkinkan scroll jika konten melebihi viewport */
     background-image: url('../img/konten.jpg');
     background-size: cover;
@@ -188,6 +188,7 @@ footer {
     padding: 20px;
     background: linear-gradient(to bottom, #192f28, #0f1a1e);
     color: #fff; /* Warna teks untuk footer */
+
 }
 
 .social-icons {
@@ -223,7 +224,7 @@ html {
   }
 
   .login-box {
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     width: 70%;
