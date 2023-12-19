@@ -14,7 +14,7 @@
             <img class="logo1" src="../static/dist/img/ISILA.png" alt="ISILA's Logo">
         </a>
         <div class="menu">
-            <a class="menu-item" href="#information">Information</a>
+            <a class="menu-item" href="/">Documentation</a>
             <a class="menu-item" href="#about">About Us</a>
             <a class="menu-item1" href="#contact">Contact</a>
         </div>
@@ -36,20 +36,25 @@
                     </a>
                 </div>
               <h2>LOGIN ADMIN</h2>
-              <form>
+              <form action="/loginadm" method="post">
+                {% if error %} <!-- Menampilkan pesan error jika ada -->
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ error }}
+                    </div>
+                {% endif %}
                 <div class="user-box">
-                  <input type="uname" name="uname" id="uname" required="">
+                  <input type="username" name="username" id="username" required="username">
                   <label>Username</label>
                 </div>
                 <div class="user-box">
-                  <input type="password" name="" required="">
+                  <input type="password" name="password" required="password">
                   <label>Password</label>
                 </div>
-                <a class="ab" href="/indexadm">
-                  <span class="span"></span>
-                  <span class="span"></span>
-                  &nbsp;Login&nbsp;
-                </a>
+                <button type="submit" class="ab">
+                    <span class="span"></span>
+                    <span class="span"></span>
+                    &nbsp;Login&nbsp;
+                </button>
                 <p class="cancel">Back to home? <a class="home" href="/"> Click this!</a></p>
               </form>
             </div>

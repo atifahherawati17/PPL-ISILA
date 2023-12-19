@@ -381,7 +381,7 @@ html {
     overflow: hidden;
     transition: .5s;
     letter-spacing: 4px;
-    background-color: #203732dd;
+    background-color: #526863;
     border-radius: 5px;
 }
 
@@ -392,7 +392,7 @@ html {
   }
 
   .abl.active {
-    background-color: #526863; /* Ganti warna latar belakang sesuai keinginan Anda */
+    background-color: #203732dd; /* Ganti warna latar belakang sesuai keinginan Anda */
 }
 
 .left p{
