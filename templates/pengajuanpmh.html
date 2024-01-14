@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ISILA | Admin - Dashboard</title>
+  <title>ISILA | User - Pengajuan</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -51,7 +51,7 @@
                with font-awesome or any other icon font library -->
           <li class="nav-header">HOME</li>
           <li class="nav-item">
-            <a href="/indexadm" class="nav-link">
+            <a href="/indexpmh" class="nav-link">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Dashboard
@@ -60,7 +60,7 @@
           </li>
           <li class="nav-header">ACTIVITIES</li>
           <li class="nav-item">
-            <a href="/pengajuan" class="nav-link">
+            <a href="/pengajuanpmh" class="nav-link">
               <i class="nav-icon fas fa-file-import"></i>
               <p>
                 Pengajuan
@@ -68,7 +68,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/pengembalian" class="nav-link">
+            <a href="/pengembalianpmh" class="nav-link">
               <i class="nav-icon fas fa-file-invoice"></i>
               <p>
                 Pengembalian
@@ -98,7 +98,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 fas fa-home">&nbsp;&nbsp;Dashboard</h1>
+            <h1 class="m-0 fas fa-file-import">&nbsp;&nbsp;Pengajuan</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -108,7 +108,7 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-
+    
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
@@ -120,8 +120,8 @@
               <span class="info-box-icon bg-white elevation-1"><i class="fas fa-file-import"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Pengajuan</span>
-                <span class="info-box-number">{{total_pengajuan}}</span>
+                <span class="info-box-text">Berhasil Diajukan</span>
+                <span class="info-box-number">{{total_berhasilpj}}</span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -137,8 +137,20 @@
               <span class="info-box-icon bg-white elevation-1"><i class="fas fa-file-invoice"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Pengembalian</span>
-                <span class="info-box-number">{{total_pengembalian}}</span>
+                <span class="info-box-text">Proses</span>
+                <span class="info-box-number">{{total_prosespj}}</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-white elevation-1"><i class="fas fa-file-invoice"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Pengajuan Ditolak</span>
+                <span class="info-box-number">{{total_ditolakpj}}</span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -156,8 +168,14 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Data Riwayat Pengguna</h3>
-              </div>
+                <h3 class="card-title">Data Riwayat Pengajuan Pengguna</h3>
+                <div class="btn-add">
+                  <a href="/addpengajuan" class="btn">
+                    &nbsp; Cetak Surat Pengajuan</a>
+                  <a href="/addpengajuan" class="btn">
+                      <i class="fas fa-plus"></i> &nbsp; Add Pengajuan</a>
+                </div>
+              </br>
               <!-- ./card-header -->
               <div class="card-body">
                 <table class="table table-bordered table-hover">
@@ -169,6 +187,7 @@
                       <th>Age</th>
                       <th>Gender</th>
                       <th>Status</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -179,55 +198,11 @@
                       <td>30</td>
                       <td>Male</td>
                       <td>diajukan</td>
-                    </tr>
-                    <tr data-widget="expandable-table" aria-expanded="false">
-                      <td>#183</td>
-                      <td>20102190</td>
-                      <td>John Doe</td>
-                      <td>30</td>
-                      <td>Male</td>
-                      <td>diajukan</td>
-                    </tr>
-                    <tr data-widget="expandable-table" aria-expanded="false">
-                      <td>#183</td>
-                      <td>20102190</td>
-                      <td>John Doe</td>
-                      <td>30</td>
-                      <td>Male</td>
-                      <td>diajukan</td>
-                    </tr>
-                    <tr data-widget="expandable-table" aria-expanded="false">
-                      <td>#183</td>
-                      <td>20102190</td>
-                      <td>John Doe</td>
-                      <td>30</td>
-                      <td>Male</td>
-                      <td>diajukan</td>
-                    </tr>
-                    <tr data-widget="expandable-table" aria-expanded="false">
-                      <td>#183</td>
-                      <td>20102190</td>
-                      <td>John Doe</td>
-                      <td>30</td>
-                      <td>Male</td>
-                      <td>diajukan</td>
-                    </tr>
-                    <tr data-widget="expandable-table" aria-expanded="false">
-                      <td>#183</td>
-                      <td>20102190</td>
-                      <td>John Doe</td>
-                      <td>30</td>
-                      <td>Male</td>
-                      <td>diajukan</td>
-                    </tr>
-                    <tr data-widget="expandable-table" aria-expanded="false">
-                      <td>#183</td>
-                      <td>20102190</td>
-                      <td>John Doe</td>
-                      <td>30</td>
-                      <td>Male</td>
-                      <td>diajukan</td>
-                    </tr>
+                      <td>
+                        <a href="#" class="alertbuttongejala custom-button">
+                            <i class="fas fa-book-open"></i>
+                        </a>
+                    </td>
                   </tbody>
                 </table>
               </div>
@@ -261,9 +236,9 @@
   document.getElementById("logoutLink").addEventListener("click", function(event) {
     event.preventDefault();
 
-    var confirmLogout = confirm("Hi! are you sure you want to logout from the admin panel?");
+    var confirmLogout = confirm("Hi! are you sure you want to logout from the user panel?");
     if (confirmLogout) {
-      window.location.href = "/loginadm";  // Redirect ke endpoint logout
+      window.location.href = "/loginpmh";  // Redirect ke endpoint logout
     }
   });
 </script>

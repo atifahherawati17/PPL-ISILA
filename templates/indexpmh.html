@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ISILA | Admin - Dashboard</title>
+  <title>ISILA | User - Dashboard</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -40,7 +40,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="info">
-          <p class="d-block"></br>&nbsp;&nbsp;&nbsp;&nbsp;Welcome to Admin Panel!</p>
+          <p class="d-block"></br>&nbsp;&nbsp;&nbsp;&nbsp;Welcome to User Panel!</p>
         </div>
       </div>
 
@@ -51,7 +51,7 @@
                with font-awesome or any other icon font library -->
           <li class="nav-header">HOME</li>
           <li class="nav-item">
-            <a href="/indexadm" class="nav-link">
+            <a href="/indexpmh" class="nav-link">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Dashboard
@@ -60,7 +60,7 @@
           </li>
           <li class="nav-header">ACTIVITIES</li>
           <li class="nav-item">
-            <a href="/pengajuan" class="nav-link">
+            <a href="/pengajuanpmh" class="nav-link">
               <i class="nav-icon fas fa-file-import"></i>
               <p>
                 Pengajuan
@@ -68,7 +68,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/pengembalian" class="nav-link">
+            <a href="/pengembalianpmh" class="nav-link">
               <i class="nav-icon fas fa-file-invoice"></i>
               <p>
                 Pengembalian
@@ -108,47 +108,6 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <!-- Info boxes -->
-        <div class="row">
-          <!-- /.col -->
-          <div class="col-12 col-sm-6 col-md-3">
-            <div class="info-box mb-3">
-              <span class="info-box-icon bg-white elevation-1"><i class="fas fa-file-import"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">Pengajuan</span>
-                <span class="info-box-number">{{total_pengajuan}}</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </div>
-          <!-- /.col -->
-
-          <!-- fix for small devices only -->
-          <div class="clearfix hidden-md-up"></div>
-
-          <div class="col-12 col-sm-6 col-md-3">
-            <div class="info-box mb-3">
-              <span class="info-box-icon bg-white elevation-1"><i class="fas fa-file-invoice"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">Pengembalian</span>
-                <span class="info-box-number">{{total_pengembalian}}</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </div>
-          <!-- /.col -->
-        </div>
-        <!-- /.row -->
-      </div><!--/. container-fluid -->
-    </section>
     <section class="content">
       <div class="container-fluid">
         <!-- /.row -->
@@ -261,9 +220,9 @@
   document.getElementById("logoutLink").addEventListener("click", function(event) {
     event.preventDefault();
 
-    var confirmLogout = confirm("Hi! are you sure you want to logout from the admin panel?");
+    var confirmLogout = confirm("Hi! are you sure you want to logout from the user panel?");
     if (confirmLogout) {
-      window.location.href = "/loginadm";  // Redirect ke endpoint logout
+      window.location.href = "/loginpmh";  // Redirect ke endpoint logout
     }
   });
 </script>

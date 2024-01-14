@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../static/dist/css/indexweb.css">
-    <title>ISILA | Login - Pemohon</title>
+    <title>ISILA | Pemohon - Login</title>
 </head>
 <body>
     <!-- HEADER -->
@@ -14,9 +14,9 @@
             <img class="logo1" src="../static/dist/img/ISILA.png" alt="ISILA's Logo">
         </a>
         <div class="menu">
-            <a class="menu-item" href="#information">Documentation</a>
-            <a class="menu-item" href="#about">About Us</a>
-            <a class="menu-item1" href="#contact">Contact</a>
+            <a class="menu-item" href="/">Documentation</a>
+            <a class="menu-item" href="/">About Us</a>
+            <a class="menu-item1" href="/">Contact</a>
         </div>
         <div class="menu1">
             <a href="/loginadm" class="menu-item2">
@@ -36,21 +36,26 @@
                     </a>
                 </div>
               <h2>LOGIN PEMOHON</h2>
-              <form>
+              <form action="/loginpmh" method="post">
+                {% if error %} <!-- Menampilkan pesan error jika ada -->
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ error }}
+                    </div>
+                {% endif %}
                 <div class="user-box">
-                  <input type="uname" name="uname" id="uname" required="">
+                  <input type="username" name="username" id="username" required="username">
                   <label>Username</label>
                 </div>
                 <div class="user-box">
-                  <input type="password" name="" required="">
+                  <input type="password" name="password" required="password">
                   <label>Password</label>
                 </div>
-                <a class="ab" href="/indexadm">
-                  <span class="span"></span>
-                  <span class="span"></span>
-                  &nbsp;Login&nbsp;
-                </a>
-                <p class="cancel">New to Isila? <a class="home" href="/registrasipmh">Sign up now!</a></p>
+                <button type="submit" class="ab">
+                    <span class="span"></span>
+                    <span class="span"></span>
+                    &nbsp;Login&nbsp;
+                </button>
+                <p class="cancel">Back to home? <a class="home" href="/"> Click this!</a></p>
               </form>
             </div>
         </div>

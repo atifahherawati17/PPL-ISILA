@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template, redirect, url_for, session
-from database import initialize_database, get_database_cursor, create_database, insert_admins, check_admin_credentials
+from database import initialize_database, get_database_cursor, create_database, insert_admins, check_admin_credentials, check_user_credentials, insert_users
 
 app = Flask(__name__)
 app.secret_key = 'ISILAKAFT'
@@ -8,6 +8,7 @@ db = initialize_database()
 cursor = get_database_cursor()
 create_database()
 insert_admins()
+insert_users()
 
 @app.route("/")
 def home():
@@ -32,13 +33,39 @@ def loginadm():
     else:
         return render_template('loginadmin.html')
 
-@app.route("/loginpmh")
-def loginpmh():
-    return render_template('loginpemohon.html')
+@app.route('/pengajuan') #index
+def pengajuan():
+    return render_template('pengajuanadm.html')
 
-@app.route('/registrasipmh')
-def registrasipmh():
-    return render_template('registrasipemohon.html')
+@app.route('/pengembalian') #index
+def pengembalian():
+    return render_template('pengembalianadm.html')
+
+@app.route('/indexpmh') #index
+def indexpmh():
+    return render_template('indexpmh.html')
+
+@app.route("/loginpmh", methods=['GET', 'POST'])
+def loginpmh():
+    if request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
+
+        if check_user_credentials(username, password):
+            return redirect(url_for('indexpmh'))
+        else:
+            return render_template('loginpemohon.html', error="Username atau password salah")
+
+    else:
+        return render_template('loginpemohon.html')
+
+@app.route('/pengajuanpmh') #index
+def pengajuanpmh():
+    return render_template('pengajuanpmh.html')
+
+@app.route('/pengembalianpmh') #index
+def pengembalianpmh():
+    return render_template('pengembalianpmh.html')
 
 if __name__ == '__main__':
     app.run (debug = True)

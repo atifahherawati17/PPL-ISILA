@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ISILA | Admin - Dashboard</title>
+  <title>ISILA | Admin - Pengajuan</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -98,7 +98,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 fas fa-home">&nbsp;&nbsp;Dashboard</h1>
+            <h1 class="m-0 fas fa-file-import">&nbsp;&nbsp;Pengajuan</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -109,46 +109,6 @@
     </div>
     <!-- /.content-header -->
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <!-- Info boxes -->
-        <div class="row">
-          <!-- /.col -->
-          <div class="col-12 col-sm-6 col-md-3">
-            <div class="info-box mb-3">
-              <span class="info-box-icon bg-white elevation-1"><i class="fas fa-file-import"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">Pengajuan</span>
-                <span class="info-box-number">{{total_pengajuan}}</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </div>
-          <!-- /.col -->
-
-          <!-- fix for small devices only -->
-          <div class="clearfix hidden-md-up"></div>
-
-          <div class="col-12 col-sm-6 col-md-3">
-            <div class="info-box mb-3">
-              <span class="info-box-icon bg-white elevation-1"><i class="fas fa-file-invoice"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">Pengembalian</span>
-                <span class="info-box-number">{{total_pengembalian}}</span>
-              </div>
-              <!-- /.info-box-content -->
-            </div>
-            <!-- /.info-box -->
-          </div>
-          <!-- /.col -->
-        </div>
-        <!-- /.row -->
-      </div><!--/. container-fluid -->
-    </section>
     <section class="content">
       <div class="container-fluid">
         <!-- /.row -->
@@ -156,7 +116,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Data Riwayat Pengguna</h3>
+                <h3 class="card-title">Data Riwayat Pengajuan Pengguna</h3>
               </div>
               <!-- ./card-header -->
               <div class="card-body">
@@ -169,6 +129,7 @@
                       <th>Age</th>
                       <th>Gender</th>
                       <th>Status</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -179,55 +140,17 @@
                       <td>30</td>
                       <td>Male</td>
                       <td>diajukan</td>
-                    </tr>
-                    <tr data-widget="expandable-table" aria-expanded="false">
-                      <td>#183</td>
-                      <td>20102190</td>
-                      <td>John Doe</td>
-                      <td>30</td>
-                      <td>Male</td>
-                      <td>diajukan</td>
-                    </tr>
-                    <tr data-widget="expandable-table" aria-expanded="false">
-                      <td>#183</td>
-                      <td>20102190</td>
-                      <td>John Doe</td>
-                      <td>30</td>
-                      <td>Male</td>
-                      <td>diajukan</td>
-                    </tr>
-                    <tr data-widget="expandable-table" aria-expanded="false">
-                      <td>#183</td>
-                      <td>20102190</td>
-                      <td>John Doe</td>
-                      <td>30</td>
-                      <td>Male</td>
-                      <td>diajukan</td>
-                    </tr>
-                    <tr data-widget="expandable-table" aria-expanded="false">
-                      <td>#183</td>
-                      <td>20102190</td>
-                      <td>John Doe</td>
-                      <td>30</td>
-                      <td>Male</td>
-                      <td>diajukan</td>
-                    </tr>
-                    <tr data-widget="expandable-table" aria-expanded="false">
-                      <td>#183</td>
-                      <td>20102190</td>
-                      <td>John Doe</td>
-                      <td>30</td>
-                      <td>Male</td>
-                      <td>diajukan</td>
-                    </tr>
-                    <tr data-widget="expandable-table" aria-expanded="false">
-                      <td>#183</td>
-                      <td>20102190</td>
-                      <td>John Doe</td>
-                      <td>30</td>
-                      <td>Male</td>
-                      <td>diajukan</td>
-                    </tr>
+                      <td>
+                        <a href="" class="custom-button">
+                            <i class="fa fa-check"></i>
+                        </a>&nbsp;&nbsp;&nbsp;
+                        <a href="" class="custom-button">
+                          <i class="fa fa-times"></i>
+                        </a>&nbsp;&nbsp;&nbsp;
+                        <a href="#" class="alertbuttongejala custom-button">
+                            <i class="fas fa-book-open"></i>
+                        </a>
+                    </td>
                   </tbody>
                 </table>
               </div>
