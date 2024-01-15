@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, redirect, url_for, session
+from flask import Flask, request, render_template, redirect, url_for, send_file
 from database import initialize_database, get_database_cursor, create_database, insert_admins, check_admin_credentials, check_user_credentials, insert_users
 
 app = Flask(__name__)
@@ -29,6 +29,11 @@ def addPengajuan():
         return redirect (url_for('home'))
     return render_template('index.html')
 
+@app.route('/cetakpengajuan', methods=['GET'])
+def cetakpengajuan():
+    file_path = 'static/surat.pdf'
+
+    return send_file(file_path, as_attachment=True)
 
 @app.route('/indexadm') #index
 def indexadm():

@@ -144,7 +144,7 @@
                         <a href="" class="custom-button" id="checkStatus">
                             <i class="fa fa-check"></i>
                         </a>&nbsp;&nbsp;&nbsp;
-                        <a href="" class="custom-button">
+                        <a href="" class="custom-button" id="crossStatus">
                           <i class="fa fa-times"></i>
                         </a>&nbsp;&nbsp;&nbsp;
                         <a href="#" class="alertbuttongejala custom-button">
@@ -195,7 +195,14 @@
 
     document.getElementById("status").innerHTML = "diterima";
   })
+
+  document.getElementById("crossStatus").addEventListener("click", (event) => {
+    event.preventDefault();
+
+    document.getElementById("status").innerHTML = "ditolak";
+  })
 </script>
+
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
