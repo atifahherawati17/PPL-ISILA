@@ -67,5 +67,9 @@ def pengajuanpmh():
 def pengembalianpmh():
     return render_template('pengembalianpmh.html')
 
+@app.route('/addpengajuan') #index
+def addpengajuan():
+    return render_template('addpengajuan.html')
+
 if __name__ == '__main__':
     app.run (debug = True)
