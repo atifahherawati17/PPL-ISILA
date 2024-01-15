@@ -15,6 +15,21 @@ def home():
     return render_template('indexweb.html')
 
 
+@app.route('/addpengajuan', methods=['POST'])
+def addPengajuan():
+    if request.method == 'POST':
+        nrp = request.form.get('nrp')
+        name = request.form.get('name')
+        age = request.form.get('age')
+        gender = request.form.get('gender')
+
+        cursor.execute('INSERT INTO your _table (NRP, Name, Age, Gender, (nrp, name, age, gender, diajukan))')
+        db.commit()
+
+        return redirect (url_for('home'))
+    return render_template('index.html')
+
+
 @app.route('/indexadm') #index
 def indexadm():
     return render_template('indexadm.html')

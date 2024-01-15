@@ -139,9 +139,9 @@
                       <td>John Doe</td>
                       <td>30</td>
                       <td>Male</td>
-                      <td>diajukan</td>
+                      <td class="status" id="status">diajukan</td>
                       <td>
-                        <a href="" class="custom-button">
+                        <a href="" class="custom-button" id="checkStatus">
                             <i class="fa fa-check"></i>
                         </a>&nbsp;&nbsp;&nbsp;
                         <a href="" class="custom-button">
@@ -189,6 +189,12 @@
       window.location.href = "/loginadm";  // Redirect ke endpoint logout
     }
   });
+
+  document.getElementById("checkStatus").addEventListener("click", (event) => {
+    event.preventDefault();
+
+    document.getElementById("status").innerHTML = "diterima";
+  })
 </script>
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
