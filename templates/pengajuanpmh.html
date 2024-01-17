@@ -191,18 +191,21 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr data-widget="expandable-table" aria-expanded="false">
-                      <td>#183</td>
-                      <td>20102190</td>
-                      <td>John Doe</td>
-                      <td>30</td>
-                      <td>Male</td>
-                      <td>diajukan</td>
-                      <td>
-                        <a href="#" class="alertbuttongejala custom-button">
-                            <i class="fas fa-book-open"></i>
-                        </a>
-                    </td>
+                    {% for item in pengajuan %}
+                      <tr data-widget="expandable-table" aria-expanded="false">
+                          <td>{{ item.id_aju }}</td>
+                          <td>{{ item.nrp }}</td>
+                          <td>{{ item.name }}</td>
+                          <td>{{ item.age }}</td>
+                          <td>{{ item.gender }}</td>
+                          <td>{{ item.status }}</td>
+                          <td>
+                              <a href="#" class="alertbuttongejala custom-button">
+                                  <i class="fas fa-book-open"></i>
+                              </a>
+                          </td>
+                      </tr>
+                    {% endfor %}
                   </tbody>
                 </table>
               </div>

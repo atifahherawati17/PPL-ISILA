@@ -1,5 +1,7 @@
 from flask import Flask, request, render_template, redirect, url_for, send_file
-from database import initialize_database, get_database_cursor, create_database, insert_admins, check_admin_credentials, check_user_credentials, insert_users
+from database import initialize_database, get_database_cursor, create_database, insert_admins, check_admin_credentials, check_user_credentials, insert_users, id_aj, id_pn
+from datetime import date
+import os
 
 app = Flask(__name__)
 app.secret_key = 'ISILAKAFT'
@@ -15,23 +17,55 @@ def home():
     return render_template('indexweb.html')
 
 
-@app.route('/addpengajuan', methods=['POST'])
-def addPengajuan():
+@app.route('/addpengajuan', methods=['GET','POST'])
+def addpengajuan():
+    next_idpu = id_aj()
     if request.method == 'POST':
         nrp = request.form.get('nrp')
+        jabatan = request.form.get('jabatan')
         name = request.form.get('name')
         age = request.form.get('age')
         gender = request.form.get('gender')
+        path_aju = os.path.join('static', 'pengajuan', request.files['file'].filename)
+        tgl_aju = date.today().strftime('%Y-%m-%d')
 
-        cursor.execute('INSERT INTO your _table (NRP, Name, Age, Gender, (nrp, name, age, gender, diajukan))')
+        cursor.execute('INSERT INTO pengajuan (id_aju, nrp, jabatan, name, age, gender, tgl_aju, path_aju, status) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)', (next_idpu, nrp, jabatan, name, age, gender, tgl_aju, path_aju, 'Diajukan'))
         db.commit()
 
-        return redirect (url_for('home'))
-    return render_template('index.html')
+        return redirect (url_for('pengajuanpmh'))
+    else:
+        return render_template('addpengajuan.html')
+
 
 @app.route('/cetakpengajuan', methods=['GET'])
 def cetakpengajuan():
-    file_path = 'static/surat.pdf'
+    file_path = 'static/surat_pengajuan.pdf'
+
+    return send_file(file_path, as_attachment=True)
+
+@app.route('/addpengembalian', methods=['GET','POST'])
+def addpengembalian():
+    next_idpn = id_pn()
+    if request.method == 'POST':
+        nrp = request.form.get('nrp')
+        jabatan = request.form.get('jabatan')
+        name = request.form.get('name')
+        age = request.form.get('age')
+        gender = request.form.get('gender')
+        path_png = os.path.join('static', 'pengembalian', request.files['file_pengembalian'].filename)
+        tgl_png = date.today().strftime('%Y-%m-%d')
+        print(request.files['file_pengembalian'].filename)
+
+        cursor.execute('INSERT INTO pengembalian (id_png, nrp, jabatan, name, age, gender, tgl_png, path_png, status) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)', (next_idpn, nrp, jabatan, name, age, gender, tgl_png, path_png, 'Diajukan'))
+        db.commit()
+
+        return redirect (url_for('pengembalianpmh'))
+    else:
+        return render_template('addpengembalian.html')
+
+@app.route('/cetakpengembalian', methods=['GET'])
+def cetakpengembalian():
+    file_path = 'static/surat_pengembalian.pdf'
 
     return send_file(file_path, as_attachment=True)
 
@@ -81,15 +115,19 @@ def loginpmh():
 
 @app.route('/pengajuanpmh') #index
 def pengajuanpmh():
-    return render_template('pengajuanpmh.html')
+    cursor.execute("SELECT * FROM pengajuan")
+    pengajuan = cursor.fetchall()
+    db.commit()
+
+    return render_template('pengajuanpmh.html', pengajuan=pengajuan)
 
 @app.route('/pengembalianpmh') #index
 def pengembalianpmh():
-    return render_template('pengembalianpmh.html')
+    cursor.execute("SELECT * FROM pengembalian")
+    pengembalian = cursor.fetchall()
+    db.commit()
+    return render_template('pengembalianpmh.html', pengembalian=pengembalian)
 
-@app.route('/addpengajuan') #index
-def addpengajuan():
-    return render_template('addpengajuan.html')
 
 if __name__ == '__main__':
     app.run (debug = True)

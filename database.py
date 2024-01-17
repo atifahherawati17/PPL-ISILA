@@ -22,6 +22,8 @@ def create_database():
 
     cursor.execute("CREATE TABLE IF NOT EXISTS admins (username VARCHAR(255) PRIMARY KEY, password VARCHAR(255) NOT NULL)")
     cursor.execute("CREATE TABLE IF NOT EXISTS users (username VARCHAR(255) PRIMARY KEY, password VARCHAR(255) NOT NULL)")
+    cursor.execute("CREATE TABLE IF NOT EXISTS pengajuan (id_aju VARCHAR(5) PRIMARY KEY, nrp VARCHAR(20), jabatan VARCHAR(50), name VARCHAR(255), age INT, gender CHAR(1), tgl_aju DATE, path_aju VARCHAR(255), status VARCHAR(20))")
+    cursor.execute("CREATE TABLE IF NOT EXISTS pengembalian (id_png VARCHAR(5) PRIMARY KEY, nrp VARCHAR(20), jabatan VARCHAR(50), name VARCHAR(255), age INT, gender CHAR(1), tgl_png DATE, path_png VARCHAR(255), status VARCHAR(20))")
 
     cursor.close()
 
@@ -92,3 +94,40 @@ def check_user_credentials(username, password):
         return True
     else:
         return False
+
+def id_aj():
+    cursor = get_database_cursor()
+
+    cursor.execute("SELECT id_aju FROM pengajuan ORDER BY id_aju DESC LIMIT 1")
+    result = cursor.fetchone()
+
+    if result and result['id_aju']:
+        last_ipg = result['id_aju']
+        prefix = last_ipg[:-2]
+        numeric_part = int(last_ipg[-2:]) + 1
+        next_ipg = f'{prefix}{numeric_part:02d}'
+    else:
+        next_ipg = '#01'
+
+    cursor.close()
+
+    return next_ipg
+
+
+def id_pn():
+    cursor = get_database_cursor()
+
+    cursor.execute("SELECT id_png FROM pengembalian ORDER BY id_png DESC LIMIT 1")
+    result = cursor.fetchone()
+
+    if result and result['id_png']:
+        last_ipgn = result['id_png']
+        prefix = last_ipgn[:-2]
+        numeric_part = int(last_ipgn[-2:]) + 1
+        next_ipgn = f'{prefix}{numeric_part:02d}'
+    else:
+        next_ipgn = '#01'
+
+    cursor.close()
+
+    return next_ipgn
